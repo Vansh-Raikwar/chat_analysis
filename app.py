@@ -174,22 +174,7 @@ if uploaded_file is not None:
         else:
              st.info("No media shared in this chat.")
 
-             st.info("No media shared in this chat.")
-
-        if selected_user == 'Overall':
-            st.title("Who Sent Maximum Media")
-            media_user_counts = stats.get_most_media_users(df)
-            if not media_user_counts.empty:
-                col1, col2 = st.columns(2)
-                with col1:
-                    fig, ax = plt.subplots()
-                    ax.bar(media_user_counts.index, media_user_counts.values, color='cyan')
-                    plt.xticks(rotation='vertical')
-                    st.pyplot(fig)
-                with col2:
-                     st.dataframe(media_user_counts)
-            else:
-                st.info("No media usage data available.")
+             
 
         # Activity maps
 
@@ -219,3 +204,4 @@ if uploaded_file is not None:
             plt.xticks(rotation='vertical')
             plt.tight_layout()
             st.pyplot(fig)
+
